@@ -1,0 +1,11 @@
+buildroot: /Users/lawrencefinn/Documents/node_fail
+timestamp: 1525272326.71
+datetime: Wednesday May 02, 2018 10:45:26
+machine: ip-192-168-1-71.ec2.internal
+version: 1.4.0
+user: lawrencefinn
+path: /Users/lawrencefinn/Documents/node_fail
+id: pants_run_2018_05_02_10_45_26_706_0517d543cb9d4187806011ce00de733e
+cmd_line: pants list ::
+default_report: /Users/lawrencefinn/Documents/node_fail/.pants.d/reports/pants_run_2018_05_02_10_45_26_706_0517d543cb9d4187806011ce00de733e/html/build.html
+outcome: FAILURE

@@ -1,0 +1,154 @@
+timestamp: 2018-05-02T10:44:53.467554
+args: ['/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/bin/pants', 'list', '::']
+pid: 12769
+Exception caught: (<class 'pants.build_graph.address_lookup_error.AddressLookupError'>)
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/bin/pants", line 11, in <module>
+    sys.exit(main())
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/bin/pants_loader.py", line 69, in main
+    PantsLoader.run()
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/bin/pants_loader.py", line 65, in run
+    cls.load_and_execute(entrypoint)
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/bin/pants_loader.py", line 58, in load_and_execute
+    entrypoint_main()
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/bin/pants_exe.py", line 39, in main
+    PantsRunner(exiter, start_time=start_time).run()
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/bin/pants_runner.py", line 53, in run
+    return runner.run()
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/bin/local_pants_runner.py", line 46, in run
+    self._run()
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/bin/local_pants_runner.py", line 91, in _run
+    self._exiter).setup()
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/bin/goal_runner.py", line 203, in setup
+    goals, context = self._setup_context()
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/bin/goal_runner.py", line 174, in _setup_context
+    self._global_options.subproject_roots,
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/bin/goal_runner.py", line 116, in _init_graph
+    graph, address_mapper = graph_helper.create_build_graph(target_roots, self._root_dir)
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/bin/engine_initializer.py", line 98, in create_build_graph
+    for _ in graph.inject_specs_closure(target_roots.as_specs()):
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/engine/legacy/graph.py", line 228, in inject_specs_closure
+    for address in self._inject(specs):
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/engine/legacy/graph.py", line 247, in _inject
+    'Build graph construction failed: {} {}'.format(type(e).__name__, str(e))
+
+Exception message: Build graph construction failed: ExecutionError Received unexpected Throw state(s):
+Computing Select(DescendantAddresses(directory=u''), =Collection.of(HydratedTarget))
+  Computing Task(<function transitive_hydrated_targets at 0x10be9cde8>, DescendantAddresses(directory=u''), =Collection.of(HydratedTarget))
+    Computing Task(<function addresses_from_address_families at 0x10ba488c0>, DescendantAddresses(directory=u''), =BuildFileAddresses)
+      Computing Task(<function parse_address_family at 0x10ba43de8>, Dir(path=''), =AddressFamily)
+        Throw(Failed to parse BUILD.tools:
+No module named Versions)
+          Traceback (most recent call last):
+            File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/engine/native.py", line 422, in extern_invoke_runnable
+              val = runnable(*args)
+            File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/engine/build_files.py", line 84, in parse_address_family
+              address_mapper.parser))
+            File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/engine/mapper.py", line 59, in parse
+              raise MappingError('Failed to parse {}:\n{}'.format(filepath, e))
+          MappingError: Failed to parse BUILD.tools:
+          No module named Versions
+
+
+Computing Select(DescendantAddresses(directory=u''), =BuildFileAddresses)
+  Computing Task(<function addresses_from_address_families at 0x10ba488c0>, DescendantAddresses(directory=u''), =BuildFileAddresses)
+    Computing Task(<function parse_address_family at 0x10ba43de8>, Dir(path=''), =AddressFamily)
+      Throw(Failed to parse BUILD.tools:
+No module named Versions)
+        Traceback (most recent call last):
+          File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/engine/native.py", line 422, in extern_invoke_runnable
+            val = runnable(*args)
+          File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/engine/build_files.py", line 84, in parse_address_family
+            address_mapper.parser))
+          File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/engine/mapper.py", line 59, in parse
+            raise MappingError('Failed to parse {}:\n{}'.format(filepath, e))
+        MappingError: Failed to parse BUILD.tools:
+        No module named Versions
+
+
+
+timestamp: 2018-05-02T10:45:08.926369
+args: ['/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/bin/pants', 'list', '::']
+pid: 12792
+Exception caught: (<class 'pants.build_graph.address_lookup_error.AddressLookupError'>)
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/bin/pants", line 11, in <module>
+    sys.exit(main())
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/bin/pants_loader.py", line 69, in main
+    PantsLoader.run()
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/bin/pants_loader.py", line 65, in run
+    cls.load_and_execute(entrypoint)
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/bin/pants_loader.py", line 58, in load_and_execute
+    entrypoint_main()
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/bin/pants_exe.py", line 39, in main
+    PantsRunner(exiter, start_time=start_time).run()
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/bin/pants_runner.py", line 53, in run
+    return runner.run()
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/bin/local_pants_runner.py", line 46, in run
+    self._run()
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/bin/local_pants_runner.py", line 91, in _run
+    self._exiter).setup()
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/bin/goal_runner.py", line 203, in setup
+    goals, context = self._setup_context()
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/bin/goal_runner.py", line 174, in _setup_context
+    self._global_options.subproject_roots,
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/bin/goal_runner.py", line 116, in _init_graph
+    graph, address_mapper = graph_helper.create_build_graph(target_roots, self._root_dir)
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/bin/engine_initializer.py", line 98, in create_build_graph
+    for _ in graph.inject_specs_closure(target_roots.as_specs()):
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/engine/legacy/graph.py", line 228, in inject_specs_closure
+    for address in self._inject(specs):
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/engine/legacy/graph.py", line 247, in _inject
+    'Build graph construction failed: {} {}'.format(type(e).__name__, str(e))
+
+Exception message: Build graph construction failed: ExecutionError Received unexpected Throw state(s):
+Computing Select(DescendantAddresses(directory=u''), =Collection.of(HydratedTarget))
+  Computing Task(<function transitive_hydrated_targets at 0x10339ade8>, DescendantAddresses(directory=u''), =Collection.of(HydratedTarget))
+    Computing Task(<function hydrate_target at 0x10339ae60>, 3rdparty/org/scala-lang:scala-library-tool, =HydratedTarget)
+      Computing Task(<function hydrate_struct at 0x102f466e0>, 3rdparty/org/scala-lang:scala-library-tool, =(symbol table types))
+        Computing Task(<function resolve_unhydrated_struct at 0x102f46758>, 3rdparty/org/scala-lang:scala-library-tool, =UnhydratedStruct)
+          Computing Task(<function parse_address_family at 0x102f41de8>, Dir(path='3rdparty/org/scala-lang'), =AddressFamily)
+            Throw(Directory "Dir(path='3rdparty/org/scala-lang')" does not contain build files.)
+              Traceback (most recent call last):
+                File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/engine/native.py", line 422, in extern_invoke_runnable
+                  val = runnable(*args)
+                File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/engine/build_files.py", line 75, in parse_address_family
+                  raise ResolveError('Directory "{}" does not contain build files.'.format(path))
+              ResolveError: Directory "Dir(path='3rdparty/org/scala-lang')" does not contain build files.
+
+
+
+
+timestamp: 2018-05-02T10:45:27.142756
+args: ['/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/bin/pants', 'list', '::']
+pid: 12815
+Exception caught: (<class 'pants.engine.legacy.graph.InvalidCommandLineSpecError'>)
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/bin/pants", line 11, in <module>
+    sys.exit(main())
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/bin/pants_loader.py", line 69, in main
+    PantsLoader.run()
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/bin/pants_loader.py", line 65, in run
+    cls.load_and_execute(entrypoint)
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/bin/pants_loader.py", line 58, in load_and_execute
+    entrypoint_main()
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/bin/pants_exe.py", line 39, in main
+    PantsRunner(exiter, start_time=start_time).run()
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/bin/pants_runner.py", line 53, in run
+    return runner.run()
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/bin/local_pants_runner.py", line 46, in run
+    self._run()
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/bin/local_pants_runner.py", line 91, in _run
+    self._exiter).setup()
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/bin/goal_runner.py", line 203, in setup
+    goals, context = self._setup_context()
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/bin/goal_runner.py", line 174, in _setup_context
+    self._global_options.subproject_roots,
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/bin/goal_runner.py", line 116, in _init_graph
+    graph, address_mapper = graph_helper.create_build_graph(target_roots, self._root_dir)
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/bin/engine_initializer.py", line 98, in create_build_graph
+    for _ in graph.inject_specs_closure(target_roots.as_specs()):
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/engine/legacy/graph.py", line 228, in inject_specs_closure
+    for address in self._inject(specs):
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/engine/legacy/graph.py", line 257, in _inject
+    'Spec {} does not match any targets.'.format(subject))
+
+Exception message: Spec DescendantAddresses(directory=u'') does not match any targets.
+

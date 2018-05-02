@@ -1,0 +1,8 @@
+.pants.d
+.cache
+.pids
+/.pants.run.lock_message
+/.pants.workdir.file_lock
+/.pants.workdir.file_lock.lock_message
+/lint-results.txt
+/dist

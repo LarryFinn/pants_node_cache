@@ -152,3 +152,127 @@ Exception caught: (<class 'pants.engine.legacy.graph.InvalidCommandLineSpecError
 
 Exception message: Spec DescendantAddresses(directory=u'') does not match any targets.
 
+timestamp: 2018-05-02T10:50:51.479272
+args: ['/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/bin/pants', 'compile', '::']
+pid: 13026
+Exception caught: (<class 'pants.ivy.bootstrapper.Error'>)
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/bin/pants", line 11, in <module>
+    sys.exit(main())
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/bin/pants_loader.py", line 69, in main
+    PantsLoader.run()
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/bin/pants_loader.py", line 65, in run
+    cls.load_and_execute(entrypoint)
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/bin/pants_loader.py", line 58, in load_and_execute
+    entrypoint_main()
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/bin/pants_exe.py", line 39, in main
+    PantsRunner(exiter, start_time=start_time).run()
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/bin/pants_runner.py", line 53, in run
+    return runner.run()
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/bin/local_pants_runner.py", line 46, in run
+    self._run()
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/bin/local_pants_runner.py", line 93, in _run
+    goal_runner_result = goal_runner.run()
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/bin/goal_runner.py", line 267, in run
+    result = self._execute_engine()
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/bin/goal_runner.py", line 256, in _execute_engine
+    result = engine.execute(self._context, self._goals)
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/engine/legacy_engine.py", line 26, in execute
+    self.attempt(context, goals)
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/engine/round_engine.py", line 224, in attempt
+    goal_executor.attempt(explain)
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/engine/round_engine.py", line 47, in attempt
+    task.execute()
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/backend/jvm/tasks/ivy_resolve.py", line 92, in execute
+    executor = self.create_java_executor()
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/backend/jvm/tasks/nailgun_task.py", line 62, in create_java_executor
+    classpath = os.pathsep.join(self.tool_classpath('nailgun-server'))
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/backend/jvm/tasks/jvm_tool_task_mixin.py", line 80, in tool_classpath
+    return self.tool_classpath_from_products(self.context.products, key, scope=self._scope(scope))
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/backend/jvm/subsystems/jvm_tool_mixin.py", line 193, in tool_classpath_from_products
+    return callback()
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/backend/jvm/tasks/bootstrap_jvm_tools.py", line 332, in bootstrap_classpath
+    cache['classpath'] = self._bootstrap_jvm_tool(dep_spec, jvm_tool)
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/backend/jvm/tasks/bootstrap_jvm_tools.py", line 321, in _bootstrap_jvm_tool
+    return self._bootstrap_classpath(jvm_tool, targets)
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/backend/jvm/tasks/bootstrap_jvm_tools.py", line 238, in _bootstrap_classpath
+    return self.ivy_classpath(targets, silent=True, workunit_name=workunit_name)
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/backend/jvm/tasks/ivy_task_mixin.py", line 156, in ivy_classpath
+    result = self._ivy_resolve(targets, silent=silent, workunit_name=workunit_name)
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/backend/jvm/tasks/ivy_task_mixin.py", line 250, in _ivy_resolve
+    resolve_vts, targets, workunit_name)
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/backend/jvm/tasks/ivy_task_mixin.py", line 289, in _perform_resolution
+    workunit_factory)
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/backend/jvm/ivy_utils.py", line 234, in exec_and_load
+    self._do_resolve(executor, extra_args, targets, jvm_options, workunit_name, workunit_factory)
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/backend/jvm/ivy_utils.py", line 252, in _do_resolve
+    workunit_factory, workunit_name)
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/backend/jvm/ivy_utils.py", line 128, in _call_ivy
+    workunit_name)
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/backend/jvm/ivy_utils.py", line 749, in do_resolve
+    ivy = Bootstrapper.default_ivy(bootstrap_workunit_factory=workunit_factory)
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/ivy/bootstrapper.py", line 61, in default_ivy
+    return cls.instance().ivy(bootstrap_workunit_factory=bootstrap_workunit_factory)
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/ivy/bootstrapper.py", line 88, in ivy
+    return Ivy(self._get_classpath(bootstrap_workunit_factory),
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/ivy/bootstrapper.py", line 99, in _get_classpath
+    self._classpath = self._bootstrap_ivy_classpath(workunit_factory)
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/ivy/bootstrapper.py", line 128, in _bootstrap_ivy_classpath
+    raise self.Error('Failed to bootstrap an ivy classpath! {}'.format(e))
+
+Exception message: Failed to bootstrap an ivy classpath! Ivy command failed with exit code 1: -confs default -cachepath /Users/lawrencefinn/.cache/pants/tools/jvm/ivy/9f015c1879bf2fe33f945e40c4f2b2b6536ca303.classpath -dependency org.apache.ivy ivy /Users/lawrencefinn/Documents/node_fail/build-support/ivy/ivy.xml
+
+timestamp: 2018-05-02T10:59:38.169395
+args: ['/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/bin/pants', 'binary', 'src/scala/larry/:larry-bin']
+pid: 13299
+Exception caught: (<class 'pants.build_graph.address_lookup_error.AddressLookupError'>)
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/bin/pants", line 11, in <module>
+    sys.exit(main())
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/bin/pants_loader.py", line 69, in main
+    PantsLoader.run()
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/bin/pants_loader.py", line 65, in run
+    cls.load_and_execute(entrypoint)
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/bin/pants_loader.py", line 58, in load_and_execute
+    entrypoint_main()
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/bin/pants_exe.py", line 39, in main
+    PantsRunner(exiter, start_time=start_time).run()
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/bin/pants_runner.py", line 53, in run
+    return runner.run()
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/bin/local_pants_runner.py", line 46, in run
+    self._run()
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/bin/local_pants_runner.py", line 91, in _run
+    self._exiter).setup()
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/bin/goal_runner.py", line 203, in setup
+    goals, context = self._setup_context()
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/bin/goal_runner.py", line 174, in _setup_context
+    self._global_options.subproject_roots,
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/bin/goal_runner.py", line 116, in _init_graph
+    graph, address_mapper = graph_helper.create_build_graph(target_roots, self._root_dir)
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/bin/engine_initializer.py", line 98, in create_build_graph
+    for _ in graph.inject_specs_closure(target_roots.as_specs()):
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/engine/legacy/graph.py", line 228, in inject_specs_closure
+    for address in self._inject(specs):
+  File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/engine/legacy/graph.py", line 247, in _inject
+    'Build graph construction failed: {} {}'.format(type(e).__name__, str(e))
+
+Exception message: Build graph construction failed: ExecutionError Received unexpected Throw state(s):
+Computing Select(SingleAddress(directory=u'src/scala/larry', name=u'larry-bin'), =Collection.of(HydratedTarget))
+  Computing Task(<function transitive_hydrated_targets at 0x10b2f9de8>, SingleAddress(directory=u'src/scala/larry', name=u'larry-bin'), =Collection.of(HydratedTarget))
+    Computing Task(<function hydrate_target at 0x10b2f9e60>, src/javascript:js-module, =HydratedTarget)
+      Computing Task(<function hydrate_struct at 0x10aea56e0>, src/javascript:js-module, =(symbol table types))
+        Computing Task(<function resolve_unhydrated_struct at 0x10aea5758>, src/javascript:js-module, =UnhydratedStruct)
+          Computing Task(<function parse_address_family at 0x10aea1de8>, Dir(path='src/javascript'), =AddressFamily)
+            Throw(Failed to parse src/javascript/BUILD:
+name 'node_module' is not defined)
+              Traceback (most recent call last):
+                File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/engine/native.py", line 422, in extern_invoke_runnable
+                  val = runnable(*args)
+                File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/engine/build_files.py", line 84, in parse_address_family
+                  address_mapper.parser))
+                File "/Users/lawrencefinn/.cache/pants/setup/bootstrap-Darwin-x86_64/1.4.0/lib/python2.7/site-packages/pants/engine/mapper.py", line 59, in parse
+                  raise MappingError('Failed to parse {}:\n{}'.format(filepath, e))
+              MappingError: Failed to parse src/javascript/BUILD:
+              name 'node_module' is not defined
+
+
+
+
